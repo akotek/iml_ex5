@@ -10,15 +10,16 @@ def GD(data, label, iters, eta):
 
     n, d = data.shape
     w = np.zeros((d, iters))
-    mat = np.zeros((d,iters))
+    mat = np.zeros((d, iters))
 
     for t in range(iters):
-        vt = get_sub_gradient_descent()
+        vt = get_sub_gradient_descent(w[t], data, label)
         w[t] = w[t] - np.dot(eta, vt)
+        #mat =
 
     return mat
 
-def get_sub_gradient_descent():
+def get_sub_gradient_descent(wt, data, y):
     pass
 
 
